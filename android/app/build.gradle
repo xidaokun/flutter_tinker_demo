@@ -12,14 +12,7 @@ if (flutterRoot == null) {
 }
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
-if (flutterVersionCode == null) {
-    flutterVersionCode = '2'
-}
-
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
-if (flutterVersionName == null) {
-    flutterVersionName = '2.0'
-}
 
 apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
@@ -33,8 +26,8 @@ android {
         applicationId "com.cary.demo.tinker_flutter_demo"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 8
-        versionName "1.0.8"
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
 
         ndk {
             //设置支持的SO库架构
