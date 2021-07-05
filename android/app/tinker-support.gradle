@@ -2,19 +2,22 @@ apply plugin: 'com.tencent.bugly.tinker-support'
 
 def bakPath = file("${buildDir}/bakApk/")
 
-def localProperties = new Properties()
-def localPropertiesFile = rootProject.file('local.properties')
-if (localPropertiesFile.exists()) {
-    localPropertiesFile.withReader('UTF-8') { reader ->
-        localProperties.load(reader)
-    }
-}
+//def localProperties = new Properties()
+//def localPropertiesFile = rootProject.file('local.properties')
+//if (localPropertiesFile.exists()) {
+//    localPropertiesFile.withReader('UTF-8') { reader ->
+//        localProperties.load(reader)
+//    }
+//}
 
 /**
  * 此处填写每次构建生成的基准包目录
  */
-def baseApkDir = localProperties.getProperty('base.apk.dir')
-def TINKER_ID = localProperties.getProperty('tinker.id')
+//def baseApkDir = localProperties.getProperty('base.apk.dir')
+//def TINKER_ID = localProperties.getProperty('tinker.id')
+
+def baseApkDir = "app-0705-14-49-01"
+def TINKER_ID = "Base-1.0.9"
 
 /**
  * 对于插件各参数的详细解析请参考

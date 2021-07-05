@@ -18,9 +18,9 @@ public class SampleApplication extends FlutterApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        Bugly.init(SampleApplication.this, "9c09326a9e", false);
         FlutterInjector.instance().flutterLoader().startInitialization(this);
-        FlutterPatch.flutterPatchInit(this);
+        Bugly.init(SampleApplication.this, "9c09326a9e", false);
+        FlutterPatch.hook(this);
     }
 
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
